@@ -60,8 +60,9 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 var User = mongoose.model('User', userSchema);
 var Show = mongoose.model('Show', showSchema);
 
-mongoose.connect('localhost');
+// mongoose.connect('localhost');
 
+moongoose.connect('mongodb://azuramei:uevol1101@ds045511.mongolab.com:45511/excalibur')
 
 var express = require('express');
 var path = require('path');
