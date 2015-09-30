@@ -16,7 +16,7 @@ sub page vies that we show or hide from the user, as appropriate.
 // for  a given URL that the browser points to, Angular should load and display a Template, and instantiate
 // a controller to provide context for the template.
 //
-angular.module('MyApp', ['ngResource', 'ngRoute', 'ngAnimate', 'mgcrea.ngStrap'])
+angular.module('MyApp', ['ngResource', 'ngRoute', 'ngAnimate'])
   .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
