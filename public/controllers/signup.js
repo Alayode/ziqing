@@ -13,5 +13,6 @@ angular.module('MyApp')
                 password: $scope.password
             });
         };
+        //binded the  fadeZoom to scope
         $scope.pageClass = 'fadeZoom'
     });
