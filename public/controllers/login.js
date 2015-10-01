@@ -7,14 +7,21 @@
 
 angular.module('MyApp')
     .controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
+        // Start Login Function generic app login
         $scope.login = function() {
             Auth.login({
                 email: $scope.email,
                 password: $scope.password
             });
         };//end login function
+
         //start facebookLogin function
         $scope.facebookLogin = function() {
           Auth.facebookLogin();
-        };//end facebookLogin function 
+        };//end facebookLogin function
+
+        //Start GoogleLogin function
+        $scope.googleLogin = function() {
+          Auth.google.login();
+        };//end GoogleLoginfunction
     }]);
