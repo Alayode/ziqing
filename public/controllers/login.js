@@ -12,5 +12,9 @@ angular.module('MyApp')
                 email: $scope.email,
                 password: $scope.password
             });
-        };
+        };//end login function
+        //start facebookLogin function
+        $scope.facebookLogin = function() {
+          Auth.facebookLogin();
+        };//end facebookLogin function 
     }]);
