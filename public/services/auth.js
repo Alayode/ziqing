@@ -10,7 +10,7 @@ angular.module('MyApp')
 //appId: '624059410963642'
     $window.fbAsyncInit = function() {
       FB.init({
-        appId: '1545171345751072',
+        appId: '1638030569798482',
         responseType: 'token',
         version: 'v2.0'
       });
