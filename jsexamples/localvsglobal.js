@@ -11,6 +11,8 @@
 *
 * */
 
+var width = 7; // declared a global variable called width and stored a value of 7
+var height = 8; // declared a global variable called height and stored a value of 8
 
 
     //we declare a function called getArea
