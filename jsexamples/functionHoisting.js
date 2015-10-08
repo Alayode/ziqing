@@ -18,6 +18,10 @@
 
 
 var scope = 'global';
-    function f(){
-        console.log(scope);
+    function f() {
+        console.log(scope);// will print undefined
+        var scope = 'local';
+        console.log(scope);//print local
+
     }
+   f();
