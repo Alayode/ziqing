@@ -25,7 +25,7 @@ function getArea(width,height){// we pass in two variables called width and heig
 console.log();//logs nothing
 console.log(getArea);//returns [Function: getArea]
 console.log(getArea.name);// getArea
-console.log(getArea());//return NaN this returns NaN or Not a number cause we tried to multiply two variables that have no numbers
+console.log(getArea(7,8));//return NaN this returns NaN or Not a number cause we tried to multiply two variables that have no numbers
 
 
 
