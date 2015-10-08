@@ -1,4 +1,4 @@
-function getArea(){
+function getArea(width,height){
 
 }
 
