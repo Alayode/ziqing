@@ -8,3 +8,6 @@ function getArea(width,height){// we pass in two variables called width and heig
 }
 
 console.log();//logs nothing
+console.log(getArea);//returns [Function: getArea]
+console.log(getArea.name);// getArea
+console.log(getArea());//return undefined
