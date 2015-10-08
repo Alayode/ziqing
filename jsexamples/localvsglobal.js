@@ -7,3 +7,4 @@ function getArea(width,height){// we pass in two variables called width and heig
     return area;
 }
 
+console.log();//logs nothing
