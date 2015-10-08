@@ -18,3 +18,5 @@
 
 
 var scope = 'global';
+    function f(){
+    }
