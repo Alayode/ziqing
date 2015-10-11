@@ -1,0 +1,519 @@
+<!--/-->
+ <!--Chris Samuel-->
+ <!--ksamuel.chris@gmail.com-->
+
+ <!--Front End Developers Interview Questions-->
+
+           <!--Today's Interview questions-->
+
+       <!--How to make a site responsive-->
+       <!--Bootstrap with responsive design-->
+       <!--Difference between responsive and adaptive-->
+       <!--What is 2 way data binding.-->
+       <!--How JS make code abstract.-->
+
+
+ <!--Difference between margin and padding-->
+ <!--Display none-->
+ <!--Visibility hidden-->
+ <!--What is lock in CSS-->
+ <!--HTML tags-->
+ <!--Function constructor in JS-->
+ <!--Functions in JS-->
+ <!--New operator in JS-->
+ <!--Tell me your background ?-->
+ <!--How do you implement Web pages sketch/ Visual designs ?-->
+ <!--Do you know Visual Design if we don't have style guides what will you do ?-->
+ <!--What kind of Projects you working on ?-->
+ <!--How would you improve performance of website ?-->
+ <!--Do you have any experience with Responsive web design and How will you implement it ?-->
+ <!--Worked with Mobile device application ?-->
+ <!--What is Box Model ?-->
+ <!--Do you have any knowledge about Backend Programming ?-->
+ <!--How will you make an AJAX call ?-->
+ <!--What kind of data type you get from Server ?-->
+ <!--Do you know extsJS/Java ?-->
+ <!--Will be able to Manage Backend code at some extend ?-->
+ <!--I had more discussion on my work and approach towards implementation.-->
+ <!--How does inheritance work in JavaScript as well as other languages?-->
+ <!--In class-based languages, there are the notion of classes and constructors. Does JavaScript support such patterns, and what design patterns-->
+ <!--Would you use to implement these features?-->
+ <!--What is a closure in JavaScript?-->
+ <!--What is the difference between providers, factories, and services in Angular?-->
+ <!--Which of the three (providers, factories, services) are singletons?-->
+ <!--What are directives in Angular? Can you give some examples of directives?-->
+ <!--What options are available when it comes to scope in terms of directives in Angular?-->
+ <!--What performance issues are you aware of when it comes to developing in Angular?-->
+ <!--What have you done in terms of responsive design?-->
+ <!--What browsers have you worked with?-->
+ <!--What options are available for cross domain Ajax requests?-->
+ <!--Have you worked with any testing frameworks?-->
+
+ <!--What is Angular JS ? JS MVC Framework-->
+ <!--Data types available in Javascript ? Int, String, Floar, Boolean, Object , Array-->
+ <!--How can we achieve Inheritance in JavaScript ? Using Prototype-->
+ <!--Why Angular JS is framework not Library-->
+ <!--What is Event Bubbling ?-->
+ <!--What is event capturing ?-->
+ <!--How we can stop bubbling at specific element ?-->
+ <!--IF you have a HTML form with elements in Tabbed manner how will you prevent form from submitting to another tab if form has errors ?-->
+ <!--What is closure in JS ?-->
+ <!--What benefits it gives ?-->
+ <!--How you can prevent global variable leakage in JavaScript ?-->
+ <!--If you have 20000 rows in grid in HTML how will you prevent page form Caching ?-->
+ <!--Have you used Slick Grid ?-->
+ <!--Discuss about socket.io-->
+ <!--What is Push vs Pull mechanism ?-->
+ <!--What is SVG?-->
+ <!--How can you program in SVGs-->
+ <!--What is the the architecture you will follow w.r.t Angular if you are allowed to design a system?-->
+ <!--How can you pass data between 2 controllers ?-->
+ <!--How can you declare custom directive in Angular ?-->
+ <!--What is Isolated scope in Angular js ?-->
+ <!--What is $rootscope in Angualr ?-->
+ <!--Have you made any complex custom directive then discuss about that-->
+ <!--How can you make Javascript router from scratch what process or method is used ?-->
+ <!--What is grid model in Bootstrap ?-->
+ <!--What is CSS Box model ?-->
+ <!--What is different between bootstrap 2 vs 3-->
+ <!--What is difference between angular 1.2 vs 1.3 vs 1.4-->
+ <!--What is one-way data binding in Angualr JS ?-->
+ <!--Lot of discussion about their system SICAR they call-->
+ <!--What is promises in JavaScript-->
+ <!--What is responsive web design ?-->
+ <!--What is difference between responsive vs Adaptive web design-->
+ <!--Have you used librararies like Lodash or similar ?-->
+ <!--Have you created consumed Web services ?-->
+ <!--If use is seeing the page you have developed , in background client get disconnected user do not know as his screen shows the HTML what will you do and how will you notify user that connection issues ?-->
+ <!--Have you created any JavaScript libraries your self ?-->
+ <!--CSS reordeing questions-->
+ <!--What are some new tags in CSS 3 HTML 5 ?-->
+ <!--What are HTML 5 Semantic tags ?-->
+ <!--HOw AJAX works ?-->
+
+
+   <!--Face to Face Questions Write Pseudo code to find sum of row elements and minimum of column elements for an array.-->
+   <!--In face book Transistions in CSS3-->
+
+ <!--/-->
+
+
+<!--/-->
+
+ <!--Centering in CSS-->
+ <!--Centering Content-->
+
+
+
+ <!--if you want to center a box on a page or center it inside the element it sits in, you can set the left margin and the right margin-->
+ <!--auto. In order to center a box on the page   you need to set a width for the box-->
+
+<head>
+<style type="text/css">
+ body {
+ text-align: center;}
+ p {
+ width: 300px;
+ padding: 50px;
+ border: 20px solid #0088dd;}
+ p.example {
+ margin: 10px auto 10px auto;
+ text-align: left;}
+</style>
+</head>
+<body>
+<p>Analog synthesizers are often said to have a "warmer" sound than their digital counterparts.</p>
+<p class="example">Analog synthesizers are often said to have a "warmer" sound than their digital counterparts.</p>
+</body>
+
+
+<!--
+Once you have specified the width of the , setting the left and right margins to auto will make the browser put an
+equal gap on each side of the box. THis centers the box on the page OR within the element that the box sits inside).
+
+In order for this to work in older browsers (particularly IE6), the element that the box sits insidde should have a text-align
+property on the centered box if you do not want the text inside it to be centered
+
+
+The most common and (therefore)  easiest type of centering is that of lines
+of text in a paragraph or in a heading. CSS has the property 'text-align' for that
+
+
+-->
+
+<style>
+  p  { text-align: center }
+  h2 { text-align: center }
+</style>
+
+
+<!--
+Centering a block or image
+
+ Sometimes it is not the text that needs to be centered but the block as a whole.
+ Or phrased differently : we want the left and right margin to be equal .
+ The way to do that is to set the margins to 'auto' This is normally used with a block of
+ fixed width, because if the block itself is flexible.
+
+ It will simply take up al the available width. Here is an example:
+
+ -->
+
+
+P.blocktext {
+  margin-left:auto;
+  margin-right:auto;
+  width: 6em;
+}
+
+<P class="blocktext">
+  This rather narrow block of text is centered. Note that the linesinside the blockquote
+  Note that the lines inside the block are not centered (they are left-aligned).Unlike in
+  the earlier example.
+</P>
+
+
+<!-- Closures -->
+
+<!--
+Like in most modern programming languages. Javascript uses lexical Scoping. That functions are executed using the
+variable scope that was in effect when they were defined, not the variable scope that is in effet when they are
+invoked.
+
+Technically all Javascript functions are closures: they are objects and they have a scope chain that is
+associated with them. Most functions are invoked using the same scope chain that was in effect when the function
+was defined, and it doesn't really matter that there is a closure involved.
+
+Closures can become interesting when the function was defined, and it doesn't really matter that there is a closure
+involved.
+
+-->
+
+<!-- Understanding closures -->
+<script>
+var scope = "global scope"; // a global variable
+
+function checkscope(){
+  var scope = "local scope"; //local variable
+  function f(){ return scope;} // A local variable
+    return f();       //Return the value in scope here
+}
+
+checkscope()   // => "local scope"
+
+</script>
+
+<!--
+function counter() {
+  var n = 0;
+  return {
+    //there are two methods
+    count: function() {return n++}, //returns the next integer
+    reset: function() { n=0; } //resets the internal state in this case  0
+  };
+}
+
+//  console.log(counter());
+
+  // The counter function returns a counter object { count: [Function], reset: [Function] }
+
+  var c = counter(), d = counter();
+
+  // console.log(c,d);
+  console.log(c.count());            // => 0
+    console.log(d.count());            // => 0 they count independently
+      console.log(c.reset());            // => reset() and count() methods share state
+        console.log(c.count());            // => 0: because we reset c
+          console.log(d.count());            // => 1: d was not reset
+
+
+// The first thing to understand is that the two methods share access to the private variable n.
+// The second thing to understand is that each invocation of counter() creates a new scope chain and new private variable
+// For example calling the object three times gives you 3 counter objects with DIFFERENT PRIVATE VARIABLES
+// So calling calling count on one counter object has no effect on the other. -->
+
+<!-- #Null and Undefined -->
+
+<!--Javascript
+//null is a language keyword that evaluates to a special value that is usually used to indicate the absence of a value.
+
+Coming from SQL NULL means no value as opposed to a field containing 0, or an empty string or just spaces.
+
+using the typeof operator on null returns the string "object", indicating that null can be thought of as a special
+object value that indicate "no value" for numbers and strings as well as objects.
+
+// Undefined represents a deeper kind of absence. It is the value of variable that have not been initialized and the value you
+// get when you query the value of variable that has not been initialized yet and the value you get when you query the value of an object
+// property or array element that does not exist yet.
+
+
+The undefined value is also returned by functions that have no return value, and the value of function parameters for null
+
+
+JS history Actionscript which is a deviation from ECMAScript 3
+
+ECMAScript  3 is a read/write variable and it can be set to any value. This error is corrected in ECMAScript 5
+and now undefined is a read-only in that version of that language. If you apply the typeof operator to the undefined value, it
+returns "undefined, indicating that this value is the sole memeber of a special type"
+
+
+
+DESPITE undefined and null's differences both have some similarities:
+
+  -  they both indicate absence of value and can often be used interchangeably.
+  -  the equality operator "==" considers them to be equal. ( Use the strict equality operator "===")
+  -  Both are falsy values they behave like false when a boolean value is required.
+  - they both don't have Properties or methods.
+          - null.prototype // returns TypeError  "Cannot read property 'prototype' of null "
+          - using null or [] or . also returns a TypeError
+
+  In conclusion wheneveryou need to assign one of these values to a function null is always the right choice.
+-->
+
+
+<!-- #Hoisting in JavaScript -->
+<!--
+
+In Some C-like programming languages each block of code within curly braces has its own scope and variables are
+                    not visible outside of the block. in which they are declared.
+
+                        THIS IS CALLED BLOCK SCOPE THIS IS NOT IN JAVASCRIPT
+
+  JavaScript uses function scope: variable are visible within the function in which they were defined and with any function that are nested within that function
+
+-->
+
+<script>
+var scope = 'global';
+
+function f() {
+    var scope;
+    console.log(scope);// will print undefined
+    var scope = 'local';
+    console.log(scope);// will print local
+}
+
+f();
+</script>
+
+
+<!--Prototypes-->
+<!--
+  When a constructor creates an object, that object implicitly references the constructor's "prototype" property
+  for the purpose of resolving property references. The constructor's "prototype" property for the purpose of property
+  references. The constructor's "prototype" property can be reference by the program expression constructor.prototype
+  and Properties added to an object's prototype are shared, through inheritance, by all objects sharing the prototype.
+  Alternatively a new object may be created with an explicity specified prototype by using the Object.create built-in function.
+
+Another way to look at prototypes is when a object that creates a new Array() uses the Array.Prototype as its prototype, and the object
+created by new Date() uses Date.Prototype as its prototype.
+
+One of the rare objects with no prototype is
+
+Object.prototype this does not inherit any properites
+
+
+
+
+-->
+
+<script>
+  var o1 = Object.create({x:1, y:2});
+  // o1 inherits the properties of x and y.
+</script>
+
+<!--
+You can pass null to create a new object that does not have a prototype, but if you do this, the newly created object will not inherits
+anything, not eveen basic methods like toString()
+
+-->
+
+<!--
+What happens when you pass null to create a new object that does not have a prototype, but if you do this, the newly
+created object will not inherit anything, not even basic mathods like toString()
+-->
+
+<script>
+var o2 = Object.create(null);
+// o2 will now inherit no props or methods.
+</script>
+
+<!--
+If you want to create an ordrinary empty object (like the object return by {} or new Object()), Just pass the
+Object.prototype:
+-->
+
+<script>
+var o3 = Object.create(Object.prototype); //o3 is like {} or new Object().
+</script>
+
+<script>
+function inherit(p){
+  // lets make sure that p is a non-null object.
+    if (p == null)
+        throw TypeError();
+    if (Object.create) // if the Object.create is defined..
+          return Object.create(p); //then we will be able to use it .
+}
+
+
+var t = typeof p;
+console.log(p);
+
+</script>
+
+
+
+
+ <!--HTML doc type-->
+    <!-- HTML 5 -->
+      <!DOCTYPE html>
+      <!-- HTML 4 -->
+      <!DOCTYPE html PUBLIC
+          "-//W3C/DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TYR/html4/loose.dtd">
+          <!-- Transitional XHTML 1.0 -->
+      <!DOCTYPE html PUBLIC
+          "-//W3C/DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TYR/xhtml1/DTD/-transitional.dtd">
+          <!--Strict XHTML 1.0 -->
+      <!DOCTYPE html PUBLIC
+      "-//W3C/DTD HTML 4.01 Transitional//EN"
+      "http://www.w3.org/TYR/xhtml1/DTD/xhtml1-strict.dtd">
+      <!-- XML Declaration -->
+      <? xml version-1.0"?>
+
+
+<!--
+Because there are several versions of HTML each web page should begin
+with a DOCTYPE Declaration to tell a browser which version of HTML
+the page is using (although browser which usually display the page even if
+it is not included)
+
+The DOCTYPE helps render the page correctly.
+
+A little on XHTML was written in XML, you will sometimes see pages that use
+the XHTML strict DOCTYPE start with the optional XML Declaration.
+Where this isused it should be the first thing in a document.
+
+THE XML DECLARATION MUST BE THE FIRST THING IN THE DOCUMENT THERE MUST BE NOTHING
+BEFORE IT NOT EVEN A SPACE.
+
+
+-->
+
+
+
+<!--#Importing different style sheets between different browsers-->
+
+<!--
+
+How to Use Different CSS Style Sheets For Different Browsers
+And How to Hide CSS Code from Older Browsers
+
+  In an ideal world, you only need one set of CSS style sheets for your website, and those styles
+   will work with every browser currently being used. This, as every webmaster soon finds out when
+   he/she uses CSS, is a pipe dream. The modern browsers all have uneven levels of implementation of
+   the CSS standards. As though this isn't bad enough, their implementations are often buggy — and
+   they don't share the same bugs! And when you have solved that tricky bit, you find that your
+   site has certain visitors (often your best customers)
+  who, for various reasons, are using older browsers that have only rudimentary support for CSS.
+
+
+  #The Good and Bad News
+
+  The bad news is that there is no standard documented method to include or exclude style sheets from being used by every browser still being used on the Internet.
+
+  All is not lost however. The good news is that there are a number of tricks, workarounds and even non-standard but documented methods available that you can use to have your style sheet included by some browsers and not others. The workarounds often rely on known bugs in certain versions of specific browsers.
+
+  On the other hand, even with these workarounds and tricks, you will probably find that there are certain browsers that you want to code for but do not have any reliable means to detect and work around. However, with the help of the tips listed here, you should be able to design a CSS-based website that works with the most commonly used browsers
+  Preliminary Tips for Coding
+
+  Before you start coding your site using CSS for specific browsers, here are some tips that hopefully will make your life easier.
+
+      #Design From Scratch
+
+      Most webmasters who have had to convert their existing non-CSS website to CSS say that they find it easier to design their site from scratch in CSS than to try to find a way to reproduce their old layout in CSS.
+
+      Another reason for designing from scratch is that CSS allows you to do many things not possible using the old paradigms. Rethinking your entire design allows you to take advantage of the new possibilities.
+
+      (Note: if yours is a brand new website, then this paragraph obviously doesn't apply to you.)
+      Code to Follow the CSS Standards First
+
+      Many web designers have found that it is far easier to develop their CSS code for a standards-compliant browser (which nowadays include all modern browsers: Internet Explorer ("IE") 8 and above, Firefox, Opera, Safari and Chrome) and then only later add the workarounds to make their code work for IE 6 and 7, than to start with IE6 and IE7 and try to make it work for a modern browser.
+
+      It is also logical to write for a more standards-compliant browser first: old browsers like IE 6 and 7 are rapidly disappearing from the Internet so much so that many sites (including a number of Google's services) don't even bother to support them. There will definitely come a day when those browsers vanish completely from the world, and when it does, all you have to do is to remove the workarounds which you've created and you're done. If you write your main style sheet with styles that are coded in a non-standard way to deal with the bugs in IE 6 and 7 first, you will end up having to rewrite everything when it happens.
+
+      This is not to say that the modern browsers do not have its own share of CSS bugs. As such, my personal recommendation is to test with at least 2 or 3 of the modern browsers each time you write your code. Note that if you test with the bare minimum of 2 browsers, make sure you choose those that use completely different display technologies (called "rendering engines"). For example, IE 11 uses its own rendering engine, as does Firefox 28. However, Chrome, Safari, Konqueror and versions of Opera later than 12.x all use a rendering engine that is based on code created originally for Konqueror. So if you must test using only 2 browsers, at least choose them from completely different families, like IE and Firefox, or something like that. This way, you can be more confident that your site looks good not because of a bug in the rendering engine, but because your code correctly reflects what needs to be done to produce that effect. You should also periodically validate your CSS code with perhaps the W3 Consortium's free style sheet validator. Only after having done the above, should you add the workarounds for IE 6 and 7.
+      Use External Style Sheets and Take Advantage of the "Cascading" Aspect of Cascading Style Sheets
+
+      One way to handle the bugs and omissions existing in different browsers is to put all your standards-compliant CSS code in a separate (external) style sheet file that is loaded by every browser.
+
+      Then, when you find that a specific browser requires a workaround, use the methods listed below to load an additional style sheet designed specifically for that particular browser. The beauty of CSS is that you can redefine a different style for the same selector and have the last-defined style override all preceding definitions.
+
+      Placing your main standards-compliant style sheet and the browser-specific style sheets in different external files allow you to simply remove a particular file in the future should that version of the browser cease to be used.
+      There's No Substitute for Testing
+
+      Even when you have validated your CSS code, you should still test your code manually using different browsers. There is no substitute for this: just because your code is standards-compliant does not mean that the browser will render it the way you want it to.
+
+      You can find information on how you can install multiple versions of different browsers on a single machine from http://www.thesitewizard.com/webdesign/multiplebrowsers.shtml
+
+  #Including or Excluding Style Sheets for IE 5 to 9
+
+  One of the easiest things to do is to specify that a certain style sheet be loaded only by IE 5, 5.5, 6, 7, 8 or 9, or be excluded from them.
+
+  Microsoft provides a non-standard extension that allows you to detect those versions of IE, and include or exclude code depending on the version. The extensions, called "conditional comments", only work for those versions of IE and none other. Specifically, they do not work on IE 10 and later, which behave just like other browsers in ignoring those conditional comments.
+
+  To cause (say) a CSS file like "iespecific.css" to be loaded by IE 6 and not other browsers, use the following code in the HEAD section of your web page:
+
+-->
+
+<!-- How to Hide CSS from IE 5 and Below for Windows -->
+<style type="text/css"><!--
+p.largetext/* */ { font-size: 200% ; }
+--></style>
+...(etc)...
+<p class="largetext">
+Large text anyone?
+</p>
+
+
+<!-- Differences between Margin and Padding -->
+
+<p> Analog synthesizers are often said to have a "warmer" sound than their digital counterparts </p>
+<p class-"example">
+  Analog Synthesizers are often said to have a "warmer" sound than their digital counterparts
+</p>
+
+<style>
+  /* the margin property controls that gap between boxes. Its value is either pixels or percentages or ems */
+  /* when one box sits on top of one another, margins are collasped, which means the larger of the two margins*/
+  /*will be used and the smaller will be disregarded.*/
+
+
+    p {
+      width: 200px;
+      border: 2px solid #0088dd
+      padding: 10px;
+      }
+
+    p.example {
+      margin: 20px;
+    }
+
+    /*
+      margin-top
+      margin-bottom
+      margin-left
+      margin-right
+
+              [top right bottom left]
+      margin: npx npx   npx    npx
+
+      sometimes you can see this as well,
+      margin: 20px 10px
+
+              This would mean Top/bottom 20px Left/Right 10px
+    */
+
+</style>
