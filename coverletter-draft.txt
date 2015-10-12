@@ -1,0 +1,47 @@
+
+
+
+    Hudl Hiring Manager
+    Hudl Inc.
+    Lincoln,Nebraska
+
+
+
+
+
+
+            Dear Hiring Manager,
+
+            I would like to propose my interest for your position at Hudl for Front-End Developer, which was advertised on
+            www.StackOverflow.com. I have spent over 8 years in web development from design to practical programming. I would like to
+            add I am one of the few JavaScript Developers who not only has the Adobe Suite but does not mind to work with wireframes
+            and mocking up templates. After taking a look at your website I notice that you include everyone on your corporate team page
+            I liked that a lot cause working remotely I hope to be able to get to know my co-workers as well.
+
+            With my practical experience and long term goal to work primarily in mobile app development I hope you will be able to utilize my experiences,
+            knowledge and skills to benefit the team as a whole. I also am very passionate in learning new skills an staying on top of the latest technologies
+
+
+            I invite you to review my attached resume and visit my github where I have a few projects and example of my programming skills and
+            understanding of core JavaScript. This will defnitely show you that I am capable and professional individual  who is able to
+            perform to the highest standards in areas such as
+
+                        Single Page App Prototyping
+                        Development Testing
+                        Search Engine Optimization
+                        HTML5/CSS3 Responsive Web Design
+                        Bootstrap Frameworks
+                        Angular JS
+                        Backbone JS
+                        jQuery UI
+                        Node JS
+
+             I am also interested in learning something totally new for my next project. It what makes being a Front-End Developer
+             all the better.
+
+Thank you sincerely for taking the time to read my application, and I
+very much look forward to an opportunity to speak to you in more detail regarding this position.
+Yours sincerely
+
+
+Chris Samuel
