@@ -13,32 +13,27 @@
        <!--How JS make code abstract.-->
 
 
- <!--Difference between margin and padding-->
- <!--Display none-->
- <!--Visibility hidden-->
+
+
+
  <!--What is lock in CSS-->
- <!--HTML tags-->
- <!--Function constructor in JS-->
- <!--Functions in JS-->
- <!--New operator in JS-->
- <!--Tell me your background ?-->
- <!--How do you implement Web pages sketch/ Visual designs ?-->
- <!--Do you know Visual Design if we don't have style guides what will you do ?-->
- <!--What kind of Projects you working on ?-->
- <!--How would you improve performance of website ?-->
+
+
+
+
  <!--Do you have any experience with Responsive web design and How will you implement it ?-->
  <!--Worked with Mobile device application ?-->
- <!--What is Box Model ?-->
+
  <!--Do you have any knowledge about Backend Programming ?-->
- <!--How will you make an AJAX call ?-->
+
  <!--What kind of data type you get from Server ?-->
- <!--Do you know extsJS/Java ?-->
+
  <!--Will be able to Manage Backend code at some extend ?-->
  <!--I had more discussion on my work and approach towards implementation.-->
  <!--How does inheritance work in JavaScript as well as other languages?-->
  <!--In class-based languages, there are the notion of classes and constructors. Does JavaScript support such patterns, and what design patterns-->
  <!--Would you use to implement these features?-->
- <!--What is a closure in JavaScript?-->
+
  <!--What is the difference between providers, factories, and services in Angular?-->
  <!--Which of the three (providers, factories, services) are singletons?-->
  <!--What are directives in Angular? Can you give some examples of directives?-->
@@ -53,11 +48,13 @@
  <!--Data types available in Javascript ? Int, String, Floar, Boolean, Object , Array-->
  <!--How can we achieve Inheritance in JavaScript ? Using Prototype-->
  <!--Why Angular JS is framework not Library-->
- <!--What is Event Bubbling ?-->
+
+
+
  <!--What is event capturing ?-->
  <!--How we can stop bubbling at specific element ?-->
  <!--IF you have a HTML form with elements in Tabbed manner how will you prevent form from submitting to another tab if form has errors ?-->
- <!--What is closure in JS ?-->
+
  <!--What benefits it gives ?-->
  <!--How you can prevent global variable leakage in JavaScript ?-->
  <!--If you have 20000 rows in grid in HTML how will you prevent page form Caching ?-->
@@ -79,7 +76,7 @@
  <!--What is difference between angular 1.2 vs 1.3 vs 1.4-->
  <!--What is one-way data binding in Angualr JS ?-->
  <!--Lot of discussion about their system SICAR they call-->
- <!--What is promises in JavaScript-->
+
  <!--What is responsive web design ?-->
  <!--What is difference between responsive vs Adaptive web design-->
  <!--Have you used librararies like Lodash or similar ?-->
@@ -479,7 +476,7 @@ Large text anyone?
 
 
 <!-- Differences between Margin and Padding -->
-
+<!-- Margin  -->
 <p> Analog synthesizers are often said to have a "warmer" sound than their digital counterparts </p>
 <p class-"example">
   Analog Synthesizers are often said to have a "warmer" sound than their digital counterparts
@@ -516,4 +513,588 @@ Large text anyone?
               This would mean Top/bottom 20px Left/Right 10px
     */
 
+/*
+margin property is not inherited by child elements in the same way
+that the color value of the font-family property is, so you need to specify
+the margin for every element that needs to use it.
+*/
 </style>
+
+<!-- Padding -->
+<style>
+/*
+the padding property allows you to specify how much space
+should appear between the content of an element and its border
+*/
+
+p{
+
+  width: 275px;
+  border: 2px solid #0088dd;
+}
+p.example{
+  padding: 10px;
+}
+
+  /*
+    The value of this property is most often specified in pixels,ems, or percentages
+    If percentage is used the padding is a percentage of the browser window
+
+    if width is added or specified for a box padding is added onto the width of the box.
+
+
+
+  */
+  p.example{
+    padding-left: 25px;
+    padding-right:25px;
+    padding-bottom:150px;
+    padding-top: 150px;
+  }
+  p.example-two{
+    padding: 10px 5px 3px 1px;
+  }
+</style>
+
+ <!--What is Box Model ?-->
+    <!-- #BoxModel -->
+
+<!--
+  in HTML all elements can be considered as representations of boxes to in
+  CSS when we say BOX model its used when talking about the design and layout
+
+Now we can step in a little further and understand the available properties that
+can be adjust to control its appearance
+
+    border - separates the edge of one box from another
+    margin - sit outside the edge of the border. You can set the width of a margin to create a gap  between the borders of two adjacent boxes
+    padding - is the space between the border of a box and any content contained within it. the more padding you add the more readable the contents it contains become.
+
+
+
+
+
+-->
+
+<style>
+  div {
+    background-color: inherit;
+    width: auto;
+    padding: inherit;
+    border: 25px;
+    margin: auto;
+  }
+</style>
+<div>I am the Box Model.</div>
+
+
+<!--Display none-->
+  <!--
+  The display Property  allows you to turn an inline element into a block level element
+  or vice-versa and can also be used to hide and element from the page.
+
+
+  -->
+  <style media="screen">
+
+    li{
+      display: none;
+      /*This hides the element from the page, the element acts as though it is not on the page at all*/
+      display:block;
+      /*this causes an inline element to act liek a block-level element*/
+      display:inline;
+          causes a block-level element to act like an inline element
+      display:inline-block;
+      /*this causes a block level element to flow like an inline element while retaining other features of block-level element*/
+
+    }
+  </style>
+
+  <!-- you can find more information on the mozzila developers website for more information about formal syntax -->
+
+ <!--Visibility hidden-->
+  #hidingBoxes #visibility
+
+    <!--
+    The visibility propety allows you to hide boxes from users
+     but it leaves a space where the element would have been.
+
+
+   -->
+<style>
+  li{
+
+    display: inline;
+    margin-right: 10px;
+  }
+  li.available-today{
+    /*will show the element*/
+    visibility: visible;
+  }
+li.coming-soon{
+  /*will display a blank space where the element was */
+  visibility: hidden;
+
+}
+
+
+ </style>
+
+
+  <!--HTML tags-->
+  <!--
+    #TAGS
+  HTML USES ELEMENTS TO DESCRIBE THE STRUCTURE OF THE page
+
+  Tags are like container they tell you something about the information that
+  is between the opening and closing tags.
+
+  #Attributes
+
+  ATTRIBUTES PROVIDE ADDITIONAL INFORMATION ABOUT THE CONTENTS OF THE element
+  THEY USUALLY HAVE A NAME AND A VALUE AND USUALLY SEPARATED BY A EQUALS SIGN
+
+  <P LANG="EN-US"> PARAGRAPH IN ENGLISH</P>
+-->
+
+
+<SCRIPT>
+// FUNCTIONS IN JS
+// #FUNCTIONS
+var width = 7; // declared a global variable called width and stored a value of 7
+var height = 8; // declared a global variable called height and stored a value of 8
+
+
+    //we declare a function called getArea
+function getArea(width,height){// we pass in two variables called width and height.
+    var area = width * height; // we will multiply width by height and store it in a declared variable called area
+    //stops the execution of the function and returns the value of  function
+    return area;
+}
+
+console.log();//logs nothing
+console.log(getArea);//returns [Function: getArea]
+console.log(getArea.name);// getArea
+console.log(getArea(width,height));//return NaN this returns NaN or Not a number cause we tried to multiply two variables that have no numbers
+
+</SCRIPT>
+
+
+ <!--New operator in JS-->
+        <!--#New-->
+
+ <script>
+    /*
+    The new operator creates and initializes a new object. The new keyword must be followed by a function
+    invocation. when a function is used this way is called a constructor and serves to initialize a newly created object.
+     Core JavaScript includes built-in constructors for native types */
+
+
+//
+//    I never really understood the new operator very well before I always thought
+//    It was just used for creating new objects. There is alot more behind this JavaScript
+//    Keyword.
+
+//            new constructor[ ([ arguments ]) ]
+//
+//
+//    constructor  - a function that specifies a type
+//    arguments    - a list of values that the constructor will be called with.
+//    * */
+//
+//    * The new operator creates an instance of a user-defined object type or one of the built-in object types that has a constructor function */
+//
+//
+
+    //var d =  date(); // this is wrong   will return undefined
+    //var d =  new date(); // almost but you forgot one importatnt thing.  the date() could be a non built in function but it has no capital letter not defined
+    var d =  new Date(); // the Date() object is a constructor in which it is always expressed with a Capital first letter.
+    console.log(d); //Mon Oct 12 2015 10:50:50 GMT-0400 (EDT) it will be the current date.
+
+
+ </script>
+
+
+
+<!--How do you implement Web pages sketch/ Visual designs ?-->
+
+
+<!--
+    #Wireframes
+
+    A wireframe is a simple sketch of the key information that needs to go on each page of the site. It shows the hierarchy of the information
+    and how much space it might require.
+
+    When working with designers will take the elements that need to appear on each page and start by  creating wireframes.
+    This Involves sketching or shading areas where each element of the page will go
+
+            logo
+            primary
+            navigation
+            heading and main bodies of text
+            user logins
+
+
+     I have not been creating many wireframes from scratch in a while  by you can ensure that all the inforation that needs to
+            be on the page is included except the color scheme or font choices backgrounds or images for the website in the wireframe.
+            it should focus on what the information needs to be on.
+
+            Wireframes make design easier because you know what information needs to appear on which page before considering
+
+
+        Getting your message across using Design
+
+            The Primary aim of any kind of visual design is to communicate Organizing and prioritizing information on a pagehelps users understand its
+            importance and what order to read it in.
+
+                        #CONTENT
+
+                            a masthead or logo
+                            links to navigate the site
+                            links to related content and other
+                            login or membership options
+                            ability for users to comment
+                            copyright information
+                            links to privacy policies
+
+                        #PRIORITIZING
+
+                            Making parts of the page look distinct from the surrounding content,
+                            designers draw attention to or away from those items
+
+                            #Visual Hierarchy
+                            Designers create something known a visual hierarchy to help users focus on the key messages that will
+                            draw peoples atttention and then guide then to subsequent messages.
+
+                            more on visual hierarchy on page 467-468
+
+                        #ORGANIZING
+
+                            Grouping into blocks or chunks makes the page easier to understand.
+
+                            also group similar information with similar style helps the user associate that style with a particular type of content.
+
+                     <!-Do you know Visual Design if we don't have style guides what will you do ?-->
+
+
+                        <!--#VisualHierarchy-->
+
+                    <!--Most web users do not read entire pages, Ratherthey skim to find information you can use contrast to creata visual-->
+                        <!--
+
+                                hierarchy that gets across your key message
+                                    Pay attention to these three concepts SIZE, COLOR an STYLE.
+
+                                    Visual hierarchy refers to the order in which your eyesperceive what they see.
+                                    visual contrast between the items being dispalyed
+
+
+
+                        -->
+
+
+<!--How will you make an AJAX call ?-->
+<!--#AJAX-->
+
+<script>
+    /*
+    * Understanding AJAX and Scripted HTTP
+    *
+    * HTTP - HyperText Transfer Protocol
+    *
+    * The Term Ajax describes an architecture for web applications that prominently features scripted HTTP
+    *
+    *       Ajax Key feature of an Ajax application is that it uses scripted HTTP to initiate data exchange
+    *       with a web server without causing pages to reload. The abiilty to avoid page reloads results in responsive
+    *       web applications that feel more like traditional web applications.
+    *
+    *
+    *       Examples of using Ajax technologies:
+    *
+    *           log user interaction data to the server or to imporove its start-up time by displaying only a simple page at first
+    *           and then downloading additional data and page components on an as-needed basis.
+    *
+    *
+    *   The Term Comet refers to a related web application architecture that uses scripted HTTP.
+    *           You can say that Comet is the opposite of Ajax or the reverse of Ajax: In comet it is the web server
+    *           that
+    *           initiates the communication asynchronously sending messages to the client. If the web application needs to respond to these messages
+    *           sent by the server, it can then use Ajax Techniques to send or request data. In Ajax, the client pulls data from the server.
+    *
+    *
+    *           Comet pushes data to Client
+    *           Ajax Pulls data from server
+    *
+    *
+    *           Examples of HTTP GET Request
+    *
+    *               <img src="/url">
+    *
+    *                   will download an image from that url.
+    *
+    *
+    *                   Ajax Stands for
+    *
+    *                   Asynchronous
+    *                   JavaScript
+    *                   And
+    *                   XML
+    *
+    *                   XML is optional it was very powerful buzzword back during its conception.
+    *
+    *
+    *
+    *
+    *
+    * */
+
+    </script>
+
+
+<!--
+What is EXTSJS
+
+Sencha Ext JS is the most comprehensive MVC/MVVM JavaScript framework for
+building feature-rich cross-platform web applications targeting desktops, tablets, and smartphones.
+Ext JS leverages HTML5 features on modern browsers while maintaining compatibility and functionality for legacy browsers.
+
+ <!--Do you know extsJS/Java ?-->
+
+
+<!--Ext.Loader.setConfig({enabled: true});-->
+
+<!--Ext.Loader.setPath('Ext.ux', '../ux/');-->
+<!--Ext.require([-->
+    <!--'Ext.grid.*',-->
+    <!--'Ext.data.*',-->
+    <!--'Ext.util.*',-->
+    <!--'Ext.toolbar.Paging',-->
+    <!--'Ext.ux.PreviewPlugin',-->
+    <!--'Ext.ModelManager',-->
+    <!--'Ext.tip.QuickTipManager'-->
+<!--]);-->
+
+
+
+<!--Ext.onReady(function(){-->
+    <!--Ext.tip.QuickTipManager.init();-->
+
+    <!--Ext.define('ForumThread', {-->
+        <!--extend: 'Ext.data.Model',-->
+        <!--fields: [-->
+            <!--'title', 'forumtitle', 'forumid', 'username',-->
+            <!--{name: 'replycount', type: 'int'},-->
+            <!--{name: 'lastpost', mapping: 'lastpost', type: 'date', dateFormat: 'timestamp'},-->
+            <!--'lastposter', 'excerpt', 'threadid'-->
+        <!--],-->
+        <!--idProperty: 'threadid'-->
+    <!--});-->
+
+    <!--// create the Data Store-->
+    <!--var store = Ext.create('Ext.data.Store', {-->
+        <!--pageSize: 50,-->
+        <!--model: 'ForumThread',-->
+        <!--remoteSort: true,-->
+        <!--proxy: {-->
+            <!--// load using script tags for cross domain, if the data in on the same domain as-->
+            <!--// this page, an HttpProxy would be better-->
+            <!--type: 'jsonp',-->
+            <!--url: 'http://www.sencha.com/forum/topics-browse-remote.php',-->
+            <!--reader: {-->
+                <!--root: 'topics',-->
+                <!--totalProperty: 'totalCount'-->
+            <!--},-->
+            <!--// sends single sort as multi parameter-->
+            <!--simpleSortMode: true-->
+        <!--},-->
+        <!--sorters: [{-->
+            <!--property: 'lastpost',-->
+            <!--direction: 'DESC'-->
+        <!--}]-->
+    <!--});-->
+
+    <!--// pluggable renders-->
+    <!--function renderTopic(value, p, record) {-->
+        <!--return Ext.String.format(-->
+            <!--'<b><a href="http://sencha.com/forum/showthread.php?t={2}" target="_blank">{0}</a></b><a href="http://sencha.com/forum/forumdisplay.php?f={3}" target="_blank">{1} Forum</a>',-->
+            <!--value,-->
+            <!--record.data.forumtitle,-->
+            <!--record.getId(),-->
+            <!--record.data.forumid-->
+        <!--);-->
+    <!--}-->
+
+    <!--function renderLast(value, p, r) {-->
+        <!--return Ext.String.format('{0}<br/>by {1}', Ext.Date.dateFormat(value, 'M j, Y, g:i a'), r.get('lastposter'));-->
+    <!--}-->
+
+
+    <!--var pluginExpanded = true;-->
+    <!--var grid = Ext.create('Ext.grid.Panel', {-->
+        <!--width: 700,-->
+        <!--height: 500,-->
+        <!--title: 'ExtJS.com - Browse Forums',-->
+        <!--store: store,-->
+        <!--disableSelection: true,-->
+        <!--loadMask: true,-->
+        <!--viewConfig: {-->
+            <!--id: 'gv',-->
+            <!--trackOver: false,-->
+            <!--stripeRows: false,-->
+            <!--plugins: [{-->
+                <!--ptype: 'preview',-->
+                <!--bodyField: 'excerpt',-->
+                <!--expanded: true,-->
+                <!--pluginId: 'preview'-->
+            <!--}]-->
+        <!--},-->
+        <!--// grid columns-->
+        <!--columns:[{-->
+            <!--// id assigned so we can apply custom css (e.g. .x-grid-cell-topic b { color:#333 })-->
+            <!--// TODO: This poses an issue in subclasses of Grid now because Headers are now Components-->
+            <!--// therefore the id will be registered in the ComponentManager and conflict. Need a way to-->
+            <!--// add additional CSS classes to the rendered cells.-->
+            <!--id: 'topic',-->
+            <!--text: "Topic",-->
+            <!--dataIndex: 'title',-->
+            <!--flex: 1,-->
+            <!--renderer: renderTopic,-->
+            <!--sortable: false-->
+        <!--},{-->
+            <!--text: "Author",-->
+            <!--dataIndex: 'username',-->
+            <!--width: 100,-->
+            <!--hidden: true,-->
+            <!--sortable: true-->
+        <!--},{-->
+            <!--text: "Replies",-->
+            <!--dataIndex: 'replycount',-->
+            <!--width: 70,-->
+            <!--align: 'right',-->
+            <!--sortable: true-->
+        <!--},{-->
+            <!--id: 'last',-->
+            <!--text: "Last Post",-->
+            <!--dataIndex: 'lastpost',-->
+            <!--width: 150,-->
+            <!--renderer: renderLast,-->
+            <!--sortable: true-->
+        <!--}],-->
+        <!--// paging bar on the bottom-->
+        <!--bbar: Ext.create('Ext.PagingToolbar', {-->
+            <!--store: store,-->
+            <!--displayInfo: true,-->
+            <!--displayMsg: 'Displaying topics {0} - {1} of {2}',-->
+            <!--emptyMsg: "No topics to display",-->
+            <!--items:[-->
+                <!--'-', {-->
+                <!--text: 'Show Preview',-->
+                <!--pressed: pluginExpanded,-->
+                <!--enableToggle: true,-->
+                <!--toggleHandler: function(btn, pressed) {-->
+                    <!--var preview = Ext.getCmp('gv').getPlugin('preview');-->
+                    <!--preview.toggleExpanded(pressed);-->
+                <!--}-->
+            <!--}]-->
+        <!--}),-->
+        <!--renderTo: 'topic-grid'-->
+    <!--});-->
+
+    <!--// trigger the data store load-->
+    <!--store.loadPage(1);-->
+<!--});-->
+
+
+<!--Large client side applications have always been hard to write, hard to organize and hard to maintain. They tend to quickly grow out of control as you add more functionality and developers to a project. Ext JS 4 comes with a new application architecture that not only organizes your code but reduces the amount you have to write.-->
+
+<!--Our application architecture follows an MVC-like pattern with Models and Controllers being introduced for the first time. There are many MVC architectures, most of which are slightly different from one another. Here's how we define ours:-->
+
+    <!--Model is a collection of fields and their data (e.g. a User model with username and password fields). Models know how to persist themselves through the data package, and can be linked to other models through associations. Models work a lot like the Ext JS 3 Record class, and are normally used with Stores to present data into grids and other components-->
+
+    <!--View is any type of component - grids, trees and panels are all views.-->
+
+    <!--Controllers are special places to put all of the code that makes your app work - whether that's rendering views, instantiating Models, or any other app logic.-->
+
+<!--In this guide we'll be creating a very simple application that manages User data. By the end you will know how to put simple applications together using the new Ext JS 4 application architecture.-->
+
+<!--The application architecture is as much about providing structure and consistency as it is about actual classes and framework code. Following the conventions unlocks a number of important benefits:-->
+
+    <!--Every application works the same way so you only have to learn it once-->
+    <!--It's easy to share code between apps because they all work the same way-->
+    <!--You can use our build tools to create optimized versions of your applications for production use-->
+
+
+<!-- EVENT BUBBLING
+#EventBubbling
+#EVENTS
+
+First let talk about EVENTS
+
+
+What is an EVENT? There are common ways in which people interact with each type of object.
+
+For Example, in a car a driver will typically use at least two pedals. The car has designed to respond differently when the driver
+interacts with each of the different pedals:
+
+       the  accelerator makes the car go faster
+       the brake slows it down.
+
+
+  An event is the computer's way of sticking up its hand and say "Hey this just happened!"
+
+
+Hotel will regularly have bookings for rooms. Each time a room is reserved, an event called book can be
+used to triggercode that will increase the value of the bookings property. Likewise a cancel event can trigger code that
+decreases the value of the bookings property.
+
+
+So when you browse the web, your browser registers different types of events.
+
+            Interactions with objects creates events
+            events trigger code
+            code responds to users
+
+
+    ++++++++++++ Common Events that occur in the browser ++++++++++++++++
+
+                 Events               |             Description
+
+
+
+    onload                                The Browser has finished loading the page.
+    onKeyDown                               The user pushes a keyboard key.
+    onmouseout                              The User moves the mouse away from an HTML Element.
+    onmouseover                             The user moves the mouse over an HTML element.
+    onclick                                 The user clicks an HTML element.
+    onchange                                An Element has been changed.
+
+
+
+
+
+
+-->
+
+
+<!--Tell me your background ?-->
+|<!--What kind of Projects you working on ?-->
+<!--
+#Backgound
+#MyProjects
+
+At the level of a senior full-stack engineer we're perhaps talking about architecting a modular Backbone/AngularJS front-end whilst optimising content delivery and tweaking hardware accelerated layers in CSS, followed by implementing an async non-blocking backend (which also pre-renders templates on the server), and pushing to an AWS cluster which has been built with security and scaleability in mind. Not to mention design. Designing UI responsively and mobile-first is essential, utilising a CSS pre-processor to save time. And remember to setup Nagios for monitoring. Oh, and ideally when the Continuous Integration server detects a bad build because your end-to-end tests have failed,
+get it to send you an SMS with the build error messages. Well, the last two are probably for bonus points.
+
+
+ -->
+
+
+ <!--What is promises in JavaScript-->
+  <!-- #promises   -->
+<!--
+So Promises have not been something available in native JavaScript Now with ES6 available this year
+Promises are now natively supported. Why is this so imortant I can tell you that because Jaascript is single-threaded
+meaning that two bits of script cannot not run at the same time, that have to run one after another.
+In Browsers JavaScript shares
+
+-->
