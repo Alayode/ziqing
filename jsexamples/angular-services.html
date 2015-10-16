@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
+    <script src="calculator.js"></script>
+    <script src="myCtrl.js"></script>
+</head>
+<body>
+
+
+
+
+<div ng-controller="myCtrl as vm">
+    A=<input type="text" ng-model="vm.valA">
+    B=<input type="text" ng-model="vm.valB">
+    <h1 ng-show="vm.theSum">New Total={{vm.theSum}}</h1>
+    <button ng-click="vm.addValues()">Click</button>
+
+</div>
+</body>
+</html>
