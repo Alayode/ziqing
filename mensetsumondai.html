@@ -16,6 +16,9 @@
 
 
 
+
+       <!--What is the difference between providers, factories, and services in Angular?-->
+       <!--Which of the three (providers, factories, services) are singletons?-->
  <!--What is lock in CSS-->
 
 
@@ -26,7 +29,6 @@
 
  <!--Do you have any knowledge about Backend Programming ?-->
 
- <!--What kind of data type you get from Server ?-->
 
  <!--Will be able to Manage Backend code at some extend ?-->
  <!--I had more discussion on my work and approach towards implementation.-->
@@ -34,8 +36,7 @@
  <!--In class-based languages, there are the notion of classes and constructors. Does JavaScript support such patterns, and what design patterns-->
  <!--Would you use to implement these features?-->
 
- <!--What is the difference between providers, factories, and services in Angular?-->
- <!--Which of the three (providers, factories, services) are singletons?-->
+
  <!--What are directives in Angular? Can you give some examples of directives?-->
  <!--What options are available when it comes to scope in terms of directives in Angular?-->
  <!--What performance issues are you aware of when it comes to developing in Angular?-->
@@ -1095,6 +1096,259 @@ get it to send you an SMS with the build error messages. Well, the last two are 
 So Promises have not been something available in native JavaScript Now with ES6 available this year
 Promises are now natively supported. Why is this so imortant I can tell you that because Jaascript is single-threaded
 meaning that two bits of script cannot not run at the same time, that have to run one after another.
-In Browsers JavaScript shares
+
+
+JavaScript is single threaded, meaning that two bits of script cannot run at the same time, they have to run one after another. In browsers, JavaScript shares a thread with a load of other stuff. What that stuff is differs from browser to browser, but typically JavaScript is in the same queue as painting, updating styles, and handling user actions (such as highlighting text and interacting with form controls). Activity in one of these things delays the others.
+
+As a human being, you're multithreaded. You can type with multiple fingers, you can drive and hold a conversation at the same time. The only blocking function we have to deal with is sneezing, where all current activity must be suspended for the duration of the sneeze. That's pretty annoying, especially when you're driving and trying to hold a conversation. You don't want to write code that's sneezy.
+
+You've probably used events and callbacks to get around this. Here are events:
+
+var img1 = document.querySelector('.img-1');
+
+img1.addEventListener('load', function() {
+  // woo yey image loaded
+});
+
+img1.addEventListener('error', function() {
+  // argh everything's broken
+});
+
+This isn't sneezy at all. We get the image, add a couple of listeners, then JavaScript can stop executing until one of those listeners is called.
+
+Unfortunately, in the example above, it's possible that the events happened before we started listening for them, so we need to work around that using the "complete" property of images:
+
+var img1 = document.querySelector('.img-1');
+
+function loaded() {
+  // woo yey image loaded
+}
+
+if (img1.complete) {
+  loaded();
+}
+else {
+  img1.addEventListener('load', loaded);
+}
+
+img1.addEventListener('error', function() {
+  // argh everything's broken
+});
+
+This doesn't catch images that error'd before we got a chance to listen for them, unfortunately the DOM doesn't give us a way to do that. Also, this is loading one image, things get even more complex if we want to know when a set of images have loaded.
+Events aren't always the best way
+
+Events are great for things that can happen multiple times on the same object — keyup, touchstart etc. With those events you don't really care about what happened before you attached the listener. But when it comes to async success/failure, ideally you want something like:
+
+img1.callThisIfLoadedOrWhenLoaded(function() {
+  // loaded
+}).orIfFailedCallThis(function() {
+  // failed
+});
+
+// and…
+whenAllTheseHaveLoaded([img1, img2]).callThis(function() {
+  // all loaded
+}).orIfSomeFailedCallThis(function() {
+  // one or more failed
+});
+
+This is what promises do, but with better naming. If HTML image elements had a "ready" method that returned a promise, we could do:
+
+img1.ready().then(function() {
+  // loaded
+}, function() {
+  // failed
+});
+
+// and…
+Promise.all([img1.ready(), img2.ready()]).then(function() {
+  // all loaded
+}, function() {
+  // one or more failed
+});
+
+At their most basic, promises are a bit like event listeners except:
+
+    A promise can only succeed or fail once. It cannot succeed or fail twice, neither can it switch from success to failure or vice versa
+    If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier
+
+This is extremely useful for async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome.
+Promise terminology
+
+Domenic Denicola proof read the first draft of this article and graded me "F" for terminology. He put me in detention, forced me to copy out States and Fates 100 times, and wrote a worried letter to my parents.
+Despite that, I still get a lot of the terminology mixed up, but here are the basics:
+
+A promise can be:
+
+fulfilled
+    The action relating to the promise succeeded
+rejected
+    The action relating to the promise failed
+pending
+    Hasn't fulfilled or rejected yet
+settled
+    Has fulfilled or rejected
+
+ The spec also uses the term thenable to describe an object that is promise-like, in that it has a then method. This term reminds me of
+ ex-England Football Manager Terry Venables so I'll be using it as little as possible.
+
+ The promise constructor takes one argument, a callback with two parameters, resolve and reject. Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject
 
 -->
+
+
+
+<script>
+var promise = new Promise(function(resolve, reject) {
+// do a thing, possibly async, then…
+
+if (/* everything turned out fine */) {
+  resolve("Stuff worked!");
+}
+else {
+  reject(Error("It broke"));
+}
+});
+
+
+//Father and Son Forecast Promise
+
+// function somewhere in father-controller.js
+var makePromiseWithSon = function() {
+    // This service's function returns a promise, but we'll deal with that shortly
+    SonService.getWeather()
+        // then() called when son gets back
+        .then(function(data) {
+            // promise fulfilled
+            if (data.forecast==='good') {
+                prepareFishingTrip();
+            } else {
+                prepareSundayRoastDinner();
+            }
+        }, function(error) {
+            // promise rejected, could log the error with: console.log('error', error);
+            prepareSundayRoastDinner();
+        });
+};
+
+// The response from the 'Fishing Weather API' will
+// be returned with the promise, if it was fulfilled. It will be in the format: { "forecast": "good" }
+
+app.factory('SonService', function ($http, $q) {
+       return {
+           getWeather: function() {
+               // the $http API is based on the deferred/promise APIs exposed by the $q service
+               // so it returns a promise for us by default
+               return $http.get('http://fishing-weather-api.com/sunday/afternoon')
+                   .then(function(response) {
+                       if (typeof response.data === 'object') {
+                           return response.data;
+                       } else {
+                           // invalid response
+                           return $q.reject(response.data);
+                       }
+
+                   }, function(response) {
+                       // something went wrong
+                       return $q.reject(response.data);
+                   });
+           }
+       };
+   });
+
+  //  This analogy demonstrates the asynchronous nature of the request the dad makes to his son, for the weather forecast. The dad doesn't
+  // want to wait at the door in anticipation when the son leaves, because he has other stuff to do. Instead, he makes a promise at the door, and decides what will happen in either of the 3 scenarios (good weather/bad weather/no forecast). The son immediately gives a promise to his dad when he leaves, and will resolve or reject it on his return.
+  //
+  //  The son is dealing with an asynchronous service (searching the sky with his telescope/using a weather API) to get data, but all of this is correctly abstracted away from his old man, who doesn't really understand technology!
+
+</script>
+
+
+<!--What kind of data type you get from Server ?-->
+
+<!--
+  jQuery is a Javascript file you include in your pages. Once include it makes it faster and easier to write cross-browser
+  JavaScript, based in two steps:
+
+        1. Using SS-style selectors to collect one or more nodes from the DOM tree.
+        2. USing jQuery's built-in methods to work with the elements in that selection.
+            - Jquery's CSS selector syntax makes it easier to select elements to work with.
+            - It also has methods that make it easier to traverse the DOM.
+            -jQuery offers methods that make it quick and simple to acheive a range of tasks that JavaScript
+            -programmers commonly need to perform
+
+
+
+    So lets move into the topic about loading data into part of a page without having to refresh the entire page.
+    The data you get from the server can be a number of ways:
+
+        JSON JavaScript Object Notation
+        XML  Extensible Markup Language
+        HTML HyperText Markup Language
+
+
+    These are the most typical servers send back
+
+
+    [XML]
+
+
+      Requesting XML Data is very similar to requesting HTML. However, processing the data that is returned is
+      more complicated because the XML must be converted into HTML in order to be shown on the page.
+
+
+
+-->
+
+<!-- Whenever a server responds with XML, it can be obtained using the responseXML property  -->
+
+<script>
+          // Create XMLHttpRequest object
+
+          var xhr = new XMLHttpRequest();
+
+          xhr.onload = function(){ //When response is loaded
+            // The following conditional check will not work locally - only on a server
+            if(xhr.status === 200){ // if the server status is 200 meaning OK
+
+
+              //THIS PART IS DIFFERENT BECAUSE IT IS PROCESSING XML NOT HTML
+
+              var response = xhr.responseXML;    // get XML from the server
+
+              /*
+              When a server responds with XML, it can be obtained using the responseXML
+              property of the XMLHttpRequest object. Here, the XML returned is stored in a variable called reponse.
+              */
+
+
+              var events = response.getElementsByTagName('event'); //Find <event> elements
+
+              /*
+               This is followedby the declaration of a new variables
+               called events, which holds all the <event> element from
+               the XML document.
+              */
+
+
+                  for (var i = 0; i < events.length; i++){
+                    var container, image, location, city, newline;
+                    container = document.createElement('div');
+                    container.className = 'event';
+
+                    image = document.createElement('img');
+                    image.setAttribute('src', getNodeValue(events[i],'map'));
+                    image.appendChild(document.createTextNode(getNodeValue(events[i],'map')));
+                    container.appendChild(image);
+
+                    
+
+                  }
+            }
+
+          }
+
+
+
+</script>
