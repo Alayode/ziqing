@@ -1438,9 +1438,21 @@ HTML and XML data. Whenthe server responds, the JSON will be converted into HTML
       // data. It is set to an empty string outside the loop so that the code
       // in the loop can add to the string
 
+
+                // Loop through the objects that represent each event using a for loop
+                // The Data in the objects are accessed using dot notation, just like you access
+                // other objects.
+
       //loop through object
       for (var i = 0; i < responseObject.events.length; i++){
         //console.log(responseObject.events[i]); log each item in the events array
+
+
+        // inside the loop, the contents of the object are added to
+        // The newContent variable, along with their corresponding
+        // HTML markup......
+
+
         newContent += '<div class="event">;'
         newContent += '<img src=' + responseObject.events[i].map +'= ';
         newContent += 'alt="' + responseObject.events[i].location + '" />'
@@ -1449,7 +1461,6 @@ HTML and XML data. Whenthe server responds, the JSON will be converted into HTML
         newContent += '</div>';
       }
 
-          
 
 
       //Update the page with the new content
