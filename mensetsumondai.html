@@ -1380,18 +1380,77 @@ app.factory('SonService', function ($http, $q) {
 
                             // the function looks for the matching tag within the XML fragment
                             // (using the DOMs's getElementsByTagName() method). It then gets the text from the first
-                            // mathching element within that fragment 
+                            // mathching element within that fragment
 
 
 
                             //The FINAL Part  is the same as the HTML EXAMPLE BUT IT REQUESTS
                             // An XML File
 
+                            xhr.open('GET', 'data/data/xml',true);
+                            xhr.send(null);
+
                   }
 
             };
 
           }
+
+
+
+</script>
+
+
+
+<!-- loading JSON with AJAX -->
+
+
+<!-- The request for JSON data uses the same syntax you saw in the requests for
+HTML and XML data. Whenthe server responds, the JSON will be converted into HTML.
+-->
+
+<script>
+  var xhr = new XMLHttpRequest();   //Lets create a XMLHttp Request Object
+
+  xhr.onload = function(){ //when the readyState changes
+    if(xhr.status === 200){ //the server status was ok
+
+
+            // The JSON data from the server is stored in a variable called
+            // the responseObject. It is made available byt the XMLHttpRequest object's
+            // responseText Property
+
+
+      responseObject = JSON.parse(xhr.responseText);
+
+        // when it comes from the server, the JSON data is a string,
+        // so it is converted into a JavaScript object using the JSON
+        // object's parse method.
+
+        //NOW LETS BUILD UP STRING WITH NEW CONTENT!!!!!
+
+      var newContent = ''; // declare a new variable and store an empty string.
+
+
+      // What is newContent for?????
+
+      // the newContent variable is created to home the new html
+      // data. It is set to an empty string outside the loop so that the code
+      // in the loop can add to the string
+
+      //loop through object
+      for (var i = 0; i < responseObject.events.length; i++){
+        //console.log(responseObject.events[i]); log each item in the events array
+        newContent += '<div class="event">;'
+        newContent += '<img src=' + responseObject.events[i].map +'= ';
+        newContent += 'alt="' + responseObject.events[i].location + '" />'
+
+
+      }
+
+    }
+  }
+
 
 
 
