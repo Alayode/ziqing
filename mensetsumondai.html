@@ -36,7 +36,6 @@
  <!--In class-based languages, there are the notion of classes and constructors. Does JavaScript support such patterns, and what design patterns-->
  <!--Would you use to implement these features?-->
 
-
  <!--What are directives in Angular? Can you give some examples of directives?-->
  <!--What options are available when it comes to scope in terms of directives in Angular?-->
  <!--What performance issues are you aware of when it comes to developing in Angular?-->
@@ -229,44 +228,6 @@ function counter() {
 // The second thing to understand is that each invocation of counter() creates a new scope chain and new private variable
 // For example calling the object three times gives you 3 counter objects with DIFFERENT PRIVATE VARIABLES
 // So calling calling count on one counter object has no effect on the other. -->
-
-<!-- #Null and Undefined -->
-
-<!--Javascript
-//null is a language keyword that evaluates to a special value that is usually used to indicate the absence of a value.
-
-Coming from SQL NULL means no value as opposed to a field containing 0, or an empty string or just spaces.
-
-using the typeof operator on null returns the string "object", indicating that null can be thought of as a special
-object value that indicate "no value" for numbers and strings as well as objects.
-
-// Undefined represents a deeper kind of absence. It is the value of variable that have not been initialized and the value you
-// get when you query the value of variable that has not been initialized yet and the value you get when you query the value of an object
-// property or array element that does not exist yet.
-
-
-The undefined value is also returned by functions that have no return value, and the value of function parameters for null
-
-
-JS history Actionscript which is a deviation from ECMAScript 3
-
-ECMAScript  3 is a read/write variable and it can be set to any value. This error is corrected in ECMAScript 5
-and now undefined is a read-only in that version of that language. If you apply the typeof operator to the undefined value, it
-returns "undefined, indicating that this value is the sole memeber of a special type"
-
-
-
-DESPITE undefined and null's differences both have some similarities:
-
-  -  they both indicate absence of value and can often be used interchangeably.
-  -  the equality operator "==" considers them to be equal. ( Use the strict equality operator "===")
-  -  Both are falsy values they behave like false when a boolean value is required.
-  - they both don't have Properties or methods.
-          - null.prototype // returns TypeError  "Cannot read property 'prototype' of null "
-          - using null or [] or . also returns a TypeError
-
-  In conclusion wheneveryou need to assign one of these values to a function null is always the right choice.
--->
 
 
 <!-- #Hoisting in JavaScript -->
@@ -1476,3 +1437,77 @@ HTML and XML data. Whenthe server responds, the JSON will be converted into HTML
 
 
 </script>
+
+
+<!--Data types available in Javascript ? Int, String, Floar, Boolean, Object , Array-->
+
+ <!-- Primary Data Types
+
+  #String
+    'String' is used when your trying to add any kind of text
+    'String' is used to add new Content to a page can contain HTML markup
+    'String' data type is enclosed in quotes single and double quotes can be used.
+
+  #number
+      numbers = 1 one
+      numbers = 2 can be used to handle the size of the page moving the position of a element.
+                  or setting the amount of time an elemtn should take to fade in.
+
+
+  #Boolean
+      True  or False ?
+
+       used in handling a conditional statement
+       Boolean comes from the mathematician George Boole.
+
+       When you think of boolean think of a light switch or
+       binary numbers 0 and 1
+
+       Examples
+        #falsy
+        In JavaScript, the empty string (""),
+        null, undefined, NaN, +0, −0 and false
+
+        #truthy
+        and their complement, "truthy", to distinguish between strictly type-checked and coerced Booleans.
+
+
+
+-->
+<!-- #Null and Undefined -->
+
+<!--Javascript
+//null is a language keyword that evaluates to a special value that is usually used to indicate the absence of a value.
+
+Coming from SQL NULL means no value as opposed to a field containing 0, or an empty string or just spaces.
+
+using the typeof operator on null returns the string "object", indicating that null can be thought of as a special
+object value that indicate "no value" for numbers and strings as well as objects.
+
+// Undefined represents a deeper kind of absence. It is the value of variable that have not been initialized and the value you
+// get when you query the value of variable that has not been initialized yet and the value you get when you query the value of an object
+// property or array element that does not exist yet.
+
+
+The undefined value is also returned by functions that have no return value, and the value of function parameters for null
+
+
+JS history Actionscript which is a deviation from ECMAScript 3
+
+ECMAScript  3 is a read/write variable and it can be set to any value. This error is corrected in ECMAScript 5
+and now undefined is a read-only in that version of that language. If you apply the typeof operator to the undefined value, it
+returns "undefined, indicating that this value is the sole memeber of a special type"
+
+
+
+DESPITE undefined and null's differences both have some similarities:
+
+  -  they both indicate absence of value and can often be used interchangeably.
+  -  the equality operator "==" considers them to be equal. ( Use the strict equality operator "===")
+  -  Both are falsy values they behave like false when a boolean value is required.
+  - they both don't have Properties or methods.
+          - null.prototype // returns TypeError  "Cannot read property 'prototype' of null "
+          - using null or [] or . also returns a TypeError
+
+  In conclusion wheneveryou need to assign one of these values to a function null is always the right choice.
+-->
