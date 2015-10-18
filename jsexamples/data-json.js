@@ -23,6 +23,8 @@ function showEvents(data){  //in the function it will take a parameter called da
   }
 
 
+
+
 // The three key differences to this script is that
     // i) It is wrapped in a function called showEvents().
     // ii) The JSON data comes in as an argument of the function call.
@@ -36,4 +38,30 @@ function showEvents(data){  //in the function it will take a parameter called da
   //Since JSONP is loading data from a different server you might add timer to
   //to check if the server has replied within a fixed time
   //if it doesnt complete in the time alloted show an error message.
-  
+
+  //
+  // showEvents({
+  //   "events": [
+  //     {
+  //       "location": "San Francisco, CA",
+  //       "date": "May 1",
+  //       "map": "img/map-ca.png"
+  //     },
+  //     {
+  //       "location": "Austin, TX",
+  //       "date": "May 15",
+  //       "map": "img/map-tx.png"
+  //     },
+  //     {
+  //       "location": "New York, NY",
+  //       "date": "May 30",
+  //       "map": "img/map-ny.png"
+  //     }
+  //   ]
+  // });
+  //
+  //
+
+  // This is what the file returns from the server wraps the JSON -formatted data
+  // inside the call to the showEvents function() So the showEvents() function is only
+  // called when the browser has loaded the remote data.
