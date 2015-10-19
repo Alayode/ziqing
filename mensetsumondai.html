@@ -17,8 +17,8 @@
 
 
 
-       <!--What is the difference between providers, factories, and services in Angular?-->
-       <!--Which of the three (providers, factories, services) are singletons?-->
+
+
  <!--What is lock in CSS-->
 
 
@@ -1511,3 +1511,54 @@ DESPITE undefined and null's differences both have some similarities:
 
   In conclusion wheneveryou need to assign one of these values to a function null is always the right choice.
 -->
+
+
+ <!--What is the difference between providers, factories, and services in Angular?-->
+  <!--What is the difference between providers, factories, and services in Angular?-->
+ <!--
+  #angularServices
+
+  Services are singleton or single-instance objects tht carry out the task necessary to support
+  your application's functionality/ Angular comes with many built in services like :
+
+    $location for interacting with the browser's location.
+    $route, for switching views based on location (URL)changes,
+    $http for communicating with servers.
+
+
+    Services are defined in the module object's API.
+
+                #Provider(name, Object OR constructor() )
+                  A configurable service with complex creation logic. If you pass an Object,
+                  it should have a function named $get that returns an instance of the service.
+                  Without this object being passed a constructor that when called, creates the instance.
+
+
+                #Factory(name,$getFunction() )
+                  A non-configurable service with complex creation logic. You specify a function that,
+                  when called returns the service instance. You could think of this as provider(name, { $get: $getFunction() } ).
+-->
+                      <script>
+
+
+                        // Create a module to support our shopping views
+                        var shoppingModule = angular.module('ShoppingModule');
+
+                        // Set up service factory to create our items interface to the
+                        // server-side database
+
+                        shoppingModule.factory('Items',function(){
+                          var items = {};
+                        })
+
+                        </script>
+<!--
+                #Service(name, constructor() )
+                  A non-configurable service with simple creation logic. Like the constructor option with
+                  provider. Angular calls it to create the service instance.
+
+
+
+
+
+  -->
